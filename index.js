@@ -3,7 +3,6 @@ const express = require('express')
 const logger = require('./loggerMiddleware')
 const cors = require('cors')
 const { response } = require('express')
-
 const app = express()
 app.use(express.json())
 app.use(logger)
@@ -97,7 +96,7 @@ app.use((request,response)=>{
     })
 })
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 // app.listen(PORT)
 
 app.listen(PORT,()=>{
