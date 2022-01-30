@@ -1,12 +1,11 @@
-const http = require('http')
 const express = require('express')
-const logger = require('./loggerMiddleware')
 const cors = require('cors')
-const { response } = require('express')
 const app = express()
+const logger = require('./loggerMiddleware')
+app.use(cors())
 app.use(express.json())
 app.use(logger)
-app.use(cors)
+
 
 //lst notes
 let notes = [
@@ -96,10 +95,11 @@ app.use((request,response)=>{
     })
 })
 
-const PORT = process.env.PORT || 3001
-// app.listen(PORT)
+// const PORT = process.env.PORT || 3001
+const PORT = 3001
+//app.listen(PORT)
 
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
     console.log('server arriba las adoro ${PORT}')  
 })
 //console.log('las adoro ${PORT}')

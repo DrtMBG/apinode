@@ -20,7 +20,7 @@
     "cors": "2.8.5",
     "express": "4.17.2"
   },
-  "eslintConfigt": {
+  "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
   }
 }
